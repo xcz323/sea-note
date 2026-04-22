@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #f08b42;
+  --color-bg-light: #f8f7f6;
+  --color-bg-dark: #221810;
+  
+  --font-sans: "Inter", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Epilogue", "Noto Sans SC", sans-serif;
+  --font-handwritten: "Zhi Mang Xing", cursive;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-light text-slate-900 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .sketch-border {
+    border: 2px solid #897261;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  
+  .hand-drawn-border {
+    border: 2px solid #f08b42;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+
+  .watercolor-bg {
+    background: radial-gradient(circle at 50% 50%, rgba(240, 139, 66, 0.05) 0%, rgba(135, 206, 235, 0.1) 100%);
+  }
+
+  .watercolor-bg-sea {
+    background: linear-gradient(135deg, #e0f2f1 0%, #b2ebf2 50%, #80deea 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .watercolor-bg-sea::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .parchment-texture {
+    background-color: #fcf5e5;
+    background-image: radial-gradient(#f0e4d0 1px, transparent 1px);
+    background-size: 20px 20px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1), inset 0 0 50px rgba(137, 114, 97, 0.05);
+    border: 2px solid #dcd0c0;
+  }
+
+  .sticky-note {
+    background-color: #fef9c3;
+    transform: rotate(-1deg);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+  }
+
+  .sketchy-border {
+    border: 2px solid #5a4a42;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+
+  .watercolor-bg-login {
+    background: radial-gradient(circle at 20% 30%, rgba(240, 139, 66, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(240, 139, 66, 0.1) 0%, transparent 40%),
+                linear-gradient(135deg, #f8f7f6 0%, #fff9f5 100%);
+  }
+
+  .hand-drawn-border-login {
+    border: 2px solid #897261;
+    border-radius: 2px 4px 5px 2px / 4px 2px 3px 5px;
+  }
+
+  .sticky-note-login {
+    background: #fffdf0;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+    transform: rotate(-1deg);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 95% 100%, 0% 100%);
+  }
+
+  .notebook-line {
+    background-image: linear-gradient(to bottom, transparent 95%, rgba(240, 139, 66, 0.1) 95%);
+    background-size: 100% 3rem;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Zhi+Mang+Xing&display=swap');
