@@ -62,8 +62,11 @@ app.post('/api/replies/:id/reaction', requireAuth, async (req: AuthedRequest, re
 
 const port = Number(process.env.PORT) || 4000;
 
-app.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Server listening on http://localhost:${port}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(port, () => {
+    // eslint-disable-next-line no-console
+    console.log(`Server listening on http://localhost:${port}`);
+  });
+}
 
+export default app;
